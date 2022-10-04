@@ -1,7 +1,7 @@
 <?= $this->extend('Front/layout/main') ?>
 
 <?= $this->section('title') ?>
-Ingresar ganado
+Registrar ganado
 <?= $this->endSection('title') ?>
 <?= $this->section('content') ?>
 <div class="content">
@@ -9,20 +9,65 @@ Ingresar ganado
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="sign pt-2 pb-2 text-center">Datos del animal</h3>
+                    <h3 class="sign pt-2 pb-2 text-center">Registrar nueva compra</h3>
                 </div>
                 <div class="form-group">
                     <div class="inputs">
-                        <div class="card-footer border-top-0 bg-transparent">
-                            <button type="button" class="btn btn-fill btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Agregar videos
-                            </button>
-                        </div>
+                        <form enctype="application/x-www-form-urlencoded" name="formEstudiante" id="formEstudiante" method="post" action="../controlador/procesar_estudiante.php">
+                            <div class="row m-3">
+                                <div class="col-6">
+                                    <label for="tipoCompra">Tipo de compra</label>
+                                    <select class="form-control" id="tipoCompra" name="tipoCompra">
+                                        <option disabled="" selected="" value="">Seleccione un elemento</option>
+                                        <option value="#">Lote</option>
+                                        <option value="#">Individual</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label for="cantidad">Cantidad</label>
+                                    <input type="int" class="form-control" id="cantidad" name="cantidad" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="color">Color</label>
+                                    <input type="text" class="form-control" id="color" name="color" placeholder="Pinto" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="tamaño">Tamaño</label>
+                                    <input type="text" class="form-control" id="tamaño" name="tamaño" placeholder="100" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="peso">Peso</label>
+                                    <input type="text" class="form-control" id="peso" name="peso" placeholder="250" required>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card">
+                                        <img id="img-preview">
+                                        <label for="file">Selecionar foto: <i class="tim-icons icon-upload"></i></label>
+                                        <input class="form-control mb-4" type="file" name="portada" id="img-uploader" required accept="image/*">
+                                        <progress id="img-upload-bar" value="0" max="100" style="width: 100%"></progress>
+                                        <input id="url" name="url" hidden>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <input class="form-control mb-3" type="text" placeholder="Comentario" name="comentario" required>
+                                </div>
+                            </div>
+
                     </div>
+
+
+                    </form>
                 </div>
+            <div class="card-footer border-top-0 bg-transparent">
+                <button type="button" class="btn btn-fill btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Agregar videos
+                </button>
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
 </div>
 
 <!-- Modal -->
