@@ -40,7 +40,7 @@ $routes->get('cuenta', 'Cuenta::Cuenta');
 $routes->get('clave', 'NuevaClave::Clave');
 $routes->get('ganado', 'GestionarGanado::Ganado');
 $routes->get('compra', 'NuevaCompra::compra');
-
+$routes->get('tablero', 'Tablero::tablero');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
