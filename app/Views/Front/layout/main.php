@@ -15,12 +15,12 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <!-- CSS Files -->
-    <link href=<?php echo base_url() . "/static/style.css" ?> rel="stylesheet">
-    <link rel="stylesheet" href=<?php echo base_url() . "/static/assets/css/bootstrap.min.css" ?>/>
-    <link rel="stylesheet" href=<?php echo base_url() . "/static/assets/css/paper-dashboard.css?v=2.0.1" ?>/>
+    <link href=<?php echo base_url() . "/public/static/style.css" ?> rel="stylesheet">
+    <link rel="stylesheet" href=<?php echo base_url() . "/public/static/assets/css/bootstrap.min.css" ?>/>
+    <link rel="stylesheet" href=<?php echo base_url() . "/public/static/assets/css/paper-dashboard.css?v=2.0.1" ?>/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link  rel="stylesheet" href= <?php echo base_url() . "/static/assets/demo/demo.css"?>/>
-    <link rel="shortcut icon" href=<?php echo base_url() . "/static/imagenes/favicon.jpg" ?>>
+    <link  rel="stylesheet" href= <?php echo base_url() . "/public/static/assets/demo/demo.css"?>/>
+    <link rel="shortcut icon" href=<?php echo base_url() . "/public/static/imagenes/favicon.jpg" ?>>
 
 </head>
 

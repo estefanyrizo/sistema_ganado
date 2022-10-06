@@ -3,7 +3,7 @@
         <div class="logo">
             <a class="simple-text logo-mini" href=<?php echo base_url() ?>>
                 <div class="logo-image-small">
-                    <img src=<?php echo base_url() . "/static/imagenes/favicon.jpg" ?>>
+                    <img src=<?php echo base_url() . "/public/static/imagenes/favicon.jpg" ?>>
                 </div>
                 <!-- <p>CT</p> -->
             </a>
