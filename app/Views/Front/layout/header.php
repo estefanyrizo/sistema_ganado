@@ -167,7 +167,7 @@
                                 ?>
                                 <?php
                                 //El primer argumento es la invocacion al controlador
-                                echo anchor("cerrarsesion", "Cerrar sesión", ['class' => 'nav-item dropdown-item']);
+                                echo anchor("salir", "Cerrar sesión", ['class' => 'nav-item dropdown-item']);
                                 ?>
                             </div>
                         </li>
