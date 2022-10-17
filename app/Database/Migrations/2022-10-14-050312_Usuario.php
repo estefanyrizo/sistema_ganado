@@ -17,7 +17,7 @@ class Usuario extends Migration
             ],
             'usuario' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '255',
+                'constraint' => '128',
             ],
             'clave' => [
                 'type'       => 'VARCHAR',
@@ -33,11 +33,23 @@ class Usuario extends Migration
             ],
             'telefono' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '255',
+                'constraint' => '128',
             ],
             'biografia' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
+            ],   
+            'correo' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '128',
+            ],   
+            'isAdmin' => [
+                'type'       => 'BIT',
+                'constraint' => '1',
+            ],   
+            'foto_perfil' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '128',
             ],   
         ]);
         $this->forge->addKey('id_usuario', true);

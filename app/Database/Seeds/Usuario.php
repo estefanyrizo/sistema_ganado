@@ -18,8 +18,8 @@ class Usuario extends Seeder
         $isAdmin = 1;
         $foto_perfil = "https://sistemas.com/termino/wp-content/uploads/Usuario-Icono.jpg";
         $data = [
-            'username' => $usuario,
-            'hash'    => $clave,
+            'usuario' => $usuario,
+            'clave'    => $clave,
             'nombre'    => $nombre,
             'apellido'  => $apellido,
             'telefono'  => $telefono,
