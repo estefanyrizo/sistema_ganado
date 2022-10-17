@@ -16,10 +16,10 @@ use App\Models\Usuario;
 
         $datosUsuario = $Usuario-> obtenerUsuario(['usuario' => $usuario]);
 
-        if(count($datosUsuario) > 0 && password_verify($clave, $datosUsuario[0]['clave']))
+        if(count($datosUsuario) > 0 && password_verify($clave, $datosUsuario[0]['hash']))
         {
             $data = [
-                "usuario" => $datosUsuario[0]['usuario'],
+                "usuario" => $datosUsuario[0]['username'],
 
             ];
             $session = session();
