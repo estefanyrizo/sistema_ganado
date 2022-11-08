@@ -36,14 +36,19 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Principal::index');
-$routes->get('/login', 'login::login');
-$routes->post('/login', 'login::loginp');
-$routes->get('/salir', 'salir::salir');
+$routes->get('/login', 'Login::login');
+$routes->post('/login', 'Login::login');
+$routes->get('/registro', 'Registro::registro');
+$routes->post('/registro', 'Registro::registro');
+$routes->get('/salir', 'Salir::salir');
 $routes->get('cuenta', 'Cuenta::Cuenta');
-$routes->get('clave', 'NuevaClave::Clave');
-$routes->get('ganado', 'GestionarGanado::Ganado');
+$routes->get('clave', 'NuevaClave::nuevaClave');
+$routes->post('clave', 'NuevaClave::nuevaClave');
+$routes->get('ganado', 'GestionarGanado::ganado');
+$routes->post('ganado', 'GestionarGanado::ganado');
 $routes->get('compra', 'NuevaCompra::compra');
 $routes->get('tablero', 'Tablero::tablero');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

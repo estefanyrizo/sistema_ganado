@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <title>Login</title>
+  <title>Registro</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/e1b504be8a.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -35,37 +35,43 @@
   <div class="container login-caja">
 
     <div class="login">
-      <?= form_open('login') ?>
-      <fieldset class="clearfix">
-        <p><span class="fontawesome-user"></span><input type="text" placeholder="Usuario" name="usuario" value="<?= set_value('usuario') ?>" id="usuario" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
-        <p><span class="fontawesome-lock"></span><input type="password" placeholder="Clave" id="clave" name="clave" value="<?= set_value('clave') ?>" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
-        <p><input type="submit" class="submit" value="Iniciar Sesión"></p>
-
-      </fieldset>
+    <?= form_open('registro') ?>
+        <fieldset class="clearfix">
+          <p><span class="fontawesome-user"></span><input type="text" placeholder="Usuario" name="usuario" id="usuario" value="<?= set_value('usuario') ?>"required></p>
+          <p><span class="fontawesome-lock"></span><input type="password" placeholder="Clave" id="clave" name="clave" value="<?= set_value('clave') ?>" pattern=".{6,}" title="6 o mas caracteres" required></p>
+          <p><span class="fontawesome-lock"></span><input type="password" placeholder="Confirmar clave" id="confirmacion" name="confirmacion" value="<?= set_value('confirmacion') ?>"pattern=".{6,}" title="6 o mas caracteres" required></p>
+          <p><span class="fontawesome-user"></span><input type="text" placeholder="Nombre" id="nombre" name="nombre" value="<?= set_value('nombre') ?>" required></p>
+          <p><span class="fontawesome-user"></span><input type="text" placeholder="Apellido" id="apellido" name="apellido" value="<?= set_value('apellido') ?>" required></p>
+          <p><span class="fa fa-phone"></span><input type="text" placeholder="Telefono" id="telefono" name="telefono" value="<?= set_value('telefono') ?>" required></p>
+          <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+          <br>
+        </fieldset>
 
       <?= form_close() ?>
 
-      <p>¿No es un miembro?
+      <p>¿Ya es un miembro?
 
         <?php
-        echo anchor('registro', 'Registrate ahora', ['class' => 'blue']);
+        echo anchor('login', 'Inicie sesión ahora', ['class' => 'blue']);
         ?>
 
         <span class="fontawesome-arrow-right"></span>
       </p>
 
     </div> <!-- end login -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <?php if (session()->getFlashdata('error')) : ?>
-      <script>
-        swal({
-          title: "Lo sentimos",
-          text: "<?= session()->getFlashdata('error'); ?>",
-          icon: "error",
-        });
-      </script>
-    <?php endif; ?>
+
   </div>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <?php if (session()->getFlashdata('error')) : ?>
+    <script>
+      swal({
+        title: "Lo sentimos",
+        text:  "<?= session()->getFlashdata('error'); ?>",
+        icon: "error",
+      });
+    </script>
+  <?php endif; ?>
+
 </body>
 
 </html>

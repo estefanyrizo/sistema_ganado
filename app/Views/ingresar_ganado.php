@@ -13,20 +13,20 @@ Ingresar ganado
                 </div>
                 <div class="form-group">
                     <div class="inputs">
-                        <form enctype="application/x-www-form-urlencoded" name="formEstudiante" id="formEstudiante" method="post" action="../controlador/procesar_estudiante.php">
-                            <div class="row m-3">
+                    <?= form_open('ganado') ?>
+                    <div class="row m-3">
                                 <div class="col-6">
                                     <label for="nombre">Nombre</label>
-                                    <input type="text" class="form-control" id="raza" name="nombre" placeholder="Palomo" required>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Palomo" required>
                                 </div>
                                 <div class="col-6">
                                     <label for="raza">Raza</label>
-                                    <select class="form-control" id="raza" name="raza">
+                                    <select class="form-control" id="raza" name="raza"required>
                                         <option disabled="" selected="" value="">Seleccione un elemento</option>
-                                        <option value="#">Brahman</option>
-                                        <option value="#">Beefmaster</option>
-                                        <option value="#">Charolais</option>
-                                        <option value="#">Simmental</option>
+                                        <?php
+                                        foreach ($raza as $raza) : ?>
+                                            <option value="<?php echo $raza["id_raza"];?>"><?php echo $raza["nombre"];?> </option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="col-6">
@@ -57,12 +57,14 @@ Ingresar ganado
                                 <div class="col-12">
                                     <input class="form-control mb-3" type="text" placeholder="Comentario" name="comentario" required>
                                 </div>
+                                <div class="col-12 form-group" align="center" >
+                                <button class="btn btn-primary"  type="submit">Ingresar</button>
+                                </div>
                             </div>
+                            <?= form_close() ?>
 
                     </div>
 
-
-                    </form>
                 </div>
             </div>
 

@@ -2,38 +2,44 @@
 
 namespace App\Controllers;
 
-use App\Models\Usuario;
+use App\Models\LoginModel;
+use Config\Services;
 
 class Login extends BaseController
 {
-
+    protected $helpers = ['form'];
     public function login()
     {
-        return view("login");
-    }
+        if (strtolower($this->request->getMethod()) !== 'post') {
+            return view('login', [
+                'validation' => Services::validation(),
+            ]);
+        }
 
-    public function loginp()
-    {
-        if (isset($_POST["usuario"], $_POST["clave"]) && !empty($_POST["usuario"]) && !empty($_POST["clave"])) {
-            $usuario = $this->request->getPost('usuario');
-            $clave = $this->request->getPost('clave');
+        $rules = [
+            'usuario' => 'required',
+            'clave' => 'required',
+        ];
 
-            $Usuario = new Usuario();
+        if (!$this->validate($rules)) {
+            session()->setFlashdata('error', "Asegurate de ingresar todos los datos");
+            return redirect()->to(base_url() . '/login');
+        }
 
-            $datosUsuario = $Usuario->obtenerUsuario(['usuario' => $usuario]);
+        $usuario = $this->request->getPost('usuario');
+        $clave = $this->request->getPost('clave');
 
-            if (count($datosUsuario) > 0 && password_verify($clave, $datosUsuario[0]['clave'])) {
-                $data = [
-                    "usuario" => $datosUsuario[0]['usuario'],
+        $Usuario = new LoginModel();
 
-                ];
-                $session = session();
-                $session->set($data);
-                return redirect()->to(base_url('/'));
-            } else {
-                return redirect()->to(base_url('/login'));
-            }
-        } else {
+        $datosUsuario = $Usuario->obtenerUsuario(['usuario' => $usuario]);
+
+        if (count($datosUsuario) > 0 && password_verify($clave, $datosUsuario[0]['clave'])) {
+            $session = session();
+            $session->set($datosUsuario[0]);
+            return redirect()->to(base_url('/'));
+        } 
+        else {
+            session()->setFlashdata('error', "Usuario o contraseña incorrectos");
             return redirect()->to(base_url('/login'));
         }
     }

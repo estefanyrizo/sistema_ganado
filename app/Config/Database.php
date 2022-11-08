@@ -31,23 +31,27 @@ class Database extends Config
      * @var array
      */
     public $default = [
-        'DSN'      => '',
+        //'DSN'      => '',
+        //'DSN' => 'pgsql:host=localhost;port=5432;dbname=regmundialfutbol;user=app_AdminQatar;password=Qatar_2022',
         'hostname' => 'localhost',
-        'username' => 'admin',
-        'password' => '123456',
-        'database' => 'sistema_ganado',
-        'DBDriver' => 'MySQLi',
+        'username' => 'admin_ganado',
+        'password' => '123456',        
+        'database' => 'sistema_ganado',        
+        'DBDriver' => 'Postgre',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),
+        //'DBDebug'  => (ENVIRONMENT !== 'development')
         'charset'  => 'utf8',
-        'DBCollat' => 'utf8_general_ci',
+        //'DBCollat' => 'utf8_general_ci',
+        'DBCollat' => '',
         'swapPre'  => '',
         'encrypt'  => false,
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        //'port'     => 3306,
+        'port'     => 5432,
     ];
 
     /**
