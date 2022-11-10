@@ -394,14 +394,6 @@ video {
   max-height: 30vw;
 }
 
-.video {
-  display: flex;
-  justify-content: center;
-}
-
-label[for=megusta] {
-  font-size: 180%;
-}
 
 input[type=radio] {
   display: none;

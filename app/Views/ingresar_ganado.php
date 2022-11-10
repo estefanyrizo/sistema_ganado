@@ -15,11 +15,11 @@ Ingresar ganado
                     <div class="inputs">
                     <?= form_open('ganado') ?>
                     <div class="row m-3">
-                                <div class="col-6">
+                                <div class="col-6 mb-3">
                                     <label for="nombre">Nombre</label>
                                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Palomo" required>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 mb-3">
                                     <label for="raza">Raza</label>
                                     <select class="form-control" id="raza" name="raza"required>
                                         <option disabled="" selected="" value="">Seleccione un elemento</option>
@@ -29,23 +29,27 @@ Ingresar ganado
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 mb-3">
                                     <label for="fechaNacimiento">Fecha de Nacimiento</label>
                                     <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3 mb-3">
+                                    <label for="codigo">Codigo de chapa</label>
+                                    <input type="text" class="form-control" id="codigo" name="codigo" placeholder="1506" required>
+                                </div>
+                                <div class="col-3 mb-3">
                                     <label for="color">Color</label>
                                     <input type="text" class="form-control" id="color" name="color" placeholder="Pinto" required>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 mb-3">
                                     <label for="tamaño">Tamaño</label>
                                     <input type="text" class="form-control" id="tamaño" name="tamaño" placeholder="100" required>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 mb-3">
                                     <label for="peso">Peso</label>
                                     <input type="text" class="form-control" id="peso" name="peso" placeholder="250" required>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 mb-3">
                                     <div class="card">
                                         <img id="img-preview">
                                         <label for="file">Selecionar foto: <i class="tim-icons icon-upload"></i></label>
@@ -54,8 +58,8 @@ Ingresar ganado
                                         <input id="url" name="url" hidden>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <input class="form-control mb-3" type="text" placeholder="Comentario" name="comentario" required>
+                                <div class="col-12 mb-1">
+                                    <input class="form-control mb-3" type="text" placeholder="Comentario" name="comentario">
                                 </div>
                                 <div class="col-12 form-group" align="center" >
                                 <button class="btn btn-primary"  type="submit">Ingresar</button>
