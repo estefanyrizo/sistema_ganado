@@ -41,13 +41,14 @@ $routes->post('/login', 'Login::login');
 $routes->get('/registro', 'Registro::registro');
 $routes->post('/registro', 'Registro::registro');
 $routes->get('/salir', 'Salir::salir');
-$routes->get('cuenta', 'Cuenta::Cuenta');
-$routes->get('clave', 'NuevaClave::nuevaClave');
-$routes->post('clave', 'NuevaClave::nuevaClave');
-$routes->get('ganado', 'GestionarGanado::ganado');
-$routes->post('ganado', 'GestionarGanado::ganado');
-$routes->get('compra', 'NuevaCompra::compra');
-$routes->get('tablero', 'Tablero::tablero');
+$routes->get('/cuenta', 'Cuenta::Cuenta');
+$routes->get('/clave', 'NuevaClave::nuevaClave');
+$routes->post('/clave', 'NuevaClave::nuevaClave');
+$routes->get('/ganado', 'GestionarGanado::ganado');
+$routes->post('/ganado', 'GestionarGanado::ganado');
+$routes->get('/compra', 'NuevaCompra::compra');
+$routes->get('/tablero', 'Tablero::tablero');
+$routes->get('/mostrar_ganado', 'MostrarGanado::mostrar');
 
 /*
  * --------------------------------------------------------------------

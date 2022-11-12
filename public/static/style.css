@@ -311,35 +311,33 @@ p {
   width: 100%;
 }
 
-.coreos {
-  max-width: 100%;
+.ganado-list {
   padding-left: 0;
   margin-left: 0;
   padding-right: 0;
   margin-right: 0;
   padding-top: 1.5%;
   padding-bottom: 3%;
-  text-align: center;
 }
-.coreos .card {
-  background-color: transparent;
-  width: 18rem;
+.ganado-list .card {
+  width: 100%;
   margin-left: 0.5%;
   margin-right: 0.5%;
 }
-.coreos .boton, .coreos .boton:hover, .coreos .boton:focus {
+.ganado-list .card .card-title {
+  text-align: center;
+  margin-top: 10%;
+}
+.ganado-list .boton, .ganado-list .boton:hover, .ganado-list .boton:focus {
   border-color: transparent;
   background-color: transparent;
 }
-.coreos .img-top {
+.ganado-list .img-top {
   width: 550px;
   height: 250px;
   overflow: hidden;
 }
-.coreos .card-title {
-  margin-top: 10%;
-}
-.coreos .coreo-box {
+.ganado-list .ganado-box {
   justify-content: center;
 }
 
@@ -394,6 +392,14 @@ video {
   max-height: 30vw;
 }
 
+.video {
+  display: flex;
+  justify-content: center;
+}
+
+label[for=megusta] {
+  font-size: 180%;
+}
 
 input[type=radio] {
   display: none;

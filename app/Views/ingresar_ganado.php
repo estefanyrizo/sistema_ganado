@@ -53,7 +53,7 @@ Ingresar ganado
                                     <div class="card">
                                         <img id="img-preview">
                                         <label for="file">Selecionar foto: <i class="tim-icons icon-upload"></i></label>
-                                        <input class="form-control mb-4" type="file" name="portada" id="img-uploader" required accept="image/*">
+                                        <input class="form-control mb-4" type="file" name="portada" id="img-uploader" accept="image/*">
                                         <progress id="img-upload-bar" value="0" max="100" style="width: 100%"></progress>
                                         <input id="url" name="url" hidden>
                                     </div>

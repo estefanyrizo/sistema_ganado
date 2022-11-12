@@ -24,7 +24,7 @@ class GestionarGanado extends BaseController
             'color' => 'required',
             'tamaño' => 'required',
             'peso' => 'required',
-            'comentario' => 'required',
+            'codigo' => 'required',
         ];
         
         if (!$this->validate($rules)) {

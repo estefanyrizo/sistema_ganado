@@ -320,22 +320,23 @@ form input[type="submit"]:hover {
   position: relative;
   width: 100%;
 }
-.coreos
+.ganado-list
 {
-    max-width: 100%;
     padding-left: 0;
     margin-left: 0;
     padding-right: 0;
     margin-right: 0;
     padding-top : 1.5%;
     padding-bottom : 3%;
-    text-align : center;
 	.card
 	{
-		background-color: transparent;
-		width: 18rem;
+		width: 100%;
 		margin-left: 0.5%;
 		margin-right: 0.5%;
+		.card-title{
+			text-align: center;
+			margin-top: 10%;
+		}
 	}
 
 	.boton, .boton:hover, .boton:focus
@@ -350,12 +351,7 @@ form input[type="submit"]:hover {
 		overflow: hidden;
 	}
 
-	.card-title
-	{
-		margin-top: 10%;
-	}
-
-	.coreo-box
+	.ganado-box
 	{
 		justify-content: center;
 	}

@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./user.html">
+                    <a href=<?php echo base_url() . "/mostrar_ganado"?>>
                         <i class="nc-icon nc-favourite-28"></i>
                         <p>Ganado</p>
                     </a>
