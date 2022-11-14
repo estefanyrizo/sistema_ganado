@@ -49,6 +49,8 @@ $routes->post('/ganado', 'GestionarGanado::ganado');
 $routes->get('/compra', 'NuevaCompra::compra');
 $routes->get('/tablero', 'Tablero::tablero');
 $routes->get('/mostrar_ganado', 'MostrarGanado::mostrar');
+$routes->get('/info_novillo/(:num)/edit', 'UpdateGanado::edit/$1', ['as' => 'admin_edit']);
+$routes->post('/info_novillo/(:num)/edit', 'UpdateGanado::edit/$1', ['as' => 'admin_edit']);
 
 /*
  * --------------------------------------------------------------------

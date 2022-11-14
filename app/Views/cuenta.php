@@ -12,7 +12,7 @@ Cuenta
           <h3 class="sign pt-2 pb-2 text-center">Datos de tu cuenta</h3>
         </div>
             <div class="card-body">
-              <div class="author">
+            <div class="author">
                 <img class="avatar" src="https://i.pinimg.com/originals/58/91/dc/5891dcea19ea2a3fee0bfeb7f01ba8d1.jpg" alt="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" id="img-preview">
                 <br>
                 <label for="img-uploader"> Editar foto de perfil</label>

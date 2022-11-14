@@ -25,7 +25,7 @@ Ingresar ganado
                                         <option disabled="" selected="" value="">Seleccione un elemento</option>
                                         <?php
                                         foreach ($raza as $raza) : ?>
-                                            <option value="<?php echo $raza["id_raza"];?>"><?php echo $raza["nombre"];?> </option>
+                                            <option value="<?php echo $raza["id_raza"];?>"><?php echo $raza["raza"];?> </option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>

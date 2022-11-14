@@ -3,10 +3,10 @@ namespace App\Models;
 use CodeIgniter\Model;
 Class UPGanadoModel extends Model{
     public function cambiarDatos($id, $datos) {
-        $Usuario = $this->db->table('Ganado');
-        $Usuario->set($datos);
-        $Usuario->where('id_ganado', $id);
-        $Usuario->update();
+        $ganado = $this->db->table('Ganado');
+        $ganado->set($datos);
+        $ganado->where('id_ganado', $id);
+        $ganado->update();
 
     }
 
