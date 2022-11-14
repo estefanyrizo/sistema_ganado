@@ -6,8 +6,21 @@ Class GanadoModel extends Model{
 
 	public function leerGanado() 
 	{
-		return $this->findAll();
+		$ganado = $this->db->table('Ganado');
+		$ganado->select('*');
+		$ganado->join('Raza', 'Raza.id_raza = Ganado.FK_id_raza', 'inner');
+		return $ganado->get()->getResultArray();
 	}
+
+	public function leerNovillo($id) 
+	{
+		$ganado = $this->db->table('Ganado');
+		$ganado->select('*');
+		$ganado->join('Raza', 'Raza.id_raza = Ganado.FK_id_raza', 'inner');
+		$ganado->where('id_ganado', $id);
+		return $ganado->get()->getResultArray();
+	}
+
 
 	public function create ($datos)
 	{

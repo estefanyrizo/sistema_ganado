@@ -6,4 +6,5 @@ Class RazaModel extends Model{
         $Raza = $this->db->table('Raza');
         return $Raza->get()->getResultArray();
     }
+    
 }

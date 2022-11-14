@@ -15,6 +15,7 @@ Cuenta
             <h5 class="card-title"><?php echo $novillo["nombre"]; ?></h5>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">Codigo: <?php echo $novillo["codigo_chapa"]; ?></li>
+              <li class="list-group-item">Raza: <?php echo $novillo["raza"]; ?></li>
               <li class="list-group-item">Color: <?php echo $novillo["color"]; ?></li>
               <li class="list-group-item">Peso: <?php echo $novillo["peso"]; ?></li>
               <li class="list-group-item">Tamaño: <?php echo $novillo["tamaño"]; ?></li>
