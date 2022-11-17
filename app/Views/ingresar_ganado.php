@@ -9,7 +9,7 @@ Ingresar ganado
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="sign pt-2 pb-2 text-center">Datos del animal</h3>
+                    <h3 class="sign pt-2 pb-2 text-center">Datos del novillo</h3>
                 </div>
                 <div class="form-group">
                     <div class="inputs">
@@ -61,6 +61,7 @@ Ingresar ganado
                                 <div class="col-12 mb-1">
                                     <input class="form-control mb-3" type="text" placeholder="Comentario" name="comentario">
                                 </div>
+                                <input id="adquicision" name="adquicision" value="2" hidden>
                                 <div class="col-12 form-group" align="center" >
                                 <button class="btn btn-primary"  type="submit">Ingresar</button>
                                 </div>

@@ -1,170 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {% block title %} {% endblock %}</title>
+<div class="content">
+    <div class="row ganado">
+        <div class="col-md-9">
+            <div class="card card-user">
+                <div class="card-header pb-5">
+                    <h3 class="sign pt-2 pb-2 text-center">Editar datos del animal</h3>
+                </div>
+                                <form action="http://localhost:8080/sistema_ganado/index.php/info_novillo/7/edit" method="post" accept-charset="utf-8">
 
-    <link href="static/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/e1b504be8a.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link href="/static/style.css" rel="stylesheet">
-    <link href="/static/assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="/static/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+                <div class="form-group">
+                    <div class="inputs">
+                        <div class="card-body">
+                           
+                                <div class="author">
+                                    <img class="avatar" src="https://storage.contextoganadero.com/s3fs-public/styles/noticias_one/public/ganaderia/field_image/2016-08/cebu_macho.jpg?itok=HvmiGh0I" alt="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" id="img-preview">
+                                    <br>
+                                    <label for="img-uploader"> Editar foto</label>
+                                    <input type="file" id="img-uploader" required accept="image/*" hidden>
+                                    <input name="perfil" id="url" hidden form="update-my-profile">
+                                    <h5 class="title">Palomo2.0</h5>
+                                </div>
+                                <div class="row m-3">
+                                    <div class="col-6 mb-3">
+                                        <label for="nombre">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" value="Palomo2.0" required>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label for="raza">Raza</label>
+                                        <select class="form-control" id="raza" name="raza" required>
+                                            <option disabled="" selected="" value="Brahman"></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" value="2022-11-08" required>
+                                    </div>
+                                    <div class="col-3 mb-3">
+                                        <label for="codigo">Codigo de chapa</label>
+                                        <input type="text" class="form-control" id="codigo" name="codigo" value="78596SH" required>
+                                    </div>
+                                    <div class="col-3 mb-3">
+                                        <label for="color">Color</label>
+                                        <input type="text" class="form-control" id="color" name="color" value="Negro" required>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label for="tamaño">Tamaño</label>
+                                        <input type="text" class="form-control" id="tamaño" name="tamaño" value="75" required>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label for="peso">Peso</label>
+                                        <input type="text" class="form-control" id="peso" name="peso" value="100" required>
+                                    </div>
+                                    <div class="col-12 mb-1">
+                                        <label for="comentario">Comentario</label>
+                                        <input class="form-control mb-3" type="text" name="comentario"  id="comentario" value="">
+                                    </div>
+                                    <div class="col-12 form-group" align="center">
+                                        <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                                    </div>
+                                
+                                </div>
+                                </form>                            
+                        </div>
 
-    <link rel="shortcut icon" href="/static/imagenes/favicon.png">
-
-</head>
-
-<body>
-    
-<div class="wrapper">
-  <div class="sidebar">
-    <!--
-      Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
-  -->
-    <div class="sidebar-wrapper">
-      <div class="logo">
-        <a href="javascript:void(0)" class="simple-text logo-mini">
-          CT
-        </a>
-        <a href="javascript:void(0)" class="simple-text logo-normal">
-          Ritmos
-        </a>
-      </div>
-      <ul class="nav">
-        <li>
-          <a href="/busqueda?rit_id=6">
-            <p>Bachata</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=1">
-            <p>Ballet</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=7">
-            <p>Bolero</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=18">
-            <p>Break dance"</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=8">
-            <p>Cha-cha-chá</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=9">
-            <p>Cumbia</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=16">
-            <p>Hip Hop</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=10">
-            <p>Kizomba</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=17">
-            <p>K-pop</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=11">
-            <p>Mambo</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=12">
-            <p>Merengue</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=15">
-            <p>Reggaetón</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=3">
-            <p>Rock & Roll</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=13">
-            <p>Salsa y Rueda Cubana</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=14">
-            <p>Samba</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=2">
-            <p>Tango</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=4">
-            <p>Vals Francés o Pericón</p>
-          </a>
-        </li>
-        <li>
-          <a href="/busqueda?rit_id=5">
-            <p>Vals Inglés</p>
-          </a>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-
-<br>
-
-{% block navbar%}
-<div class="navbar-toggle d-inline">
-  <button type="button" class="navbar-toggler">
-    <span class="navbar-toggler-bar bar1"></span>
-    <span class="navbar-toggler-bar bar2"></span>
-    <span class="navbar-toggler-bar bar3"></span>
-  </button>
-</div>
-{% endblock %}
-
-<div>
-  <form action="/" method="post" class="form-inline pt-5 mt-5 justify-content-center">
-    <input class="form-control" id="search" autocomplete="on" autofocus class="form-control" name="coreo"
-      placeholder="Coreografo, categoria, cancion" type="text" />
-
-    <button class="btn btn-fill btn-primary" type="submit"><i class="fas fa-search"></i></button>
-  </form>
-</div>
-
-
-  <div class="coreos">
-    <h3 >{{coreos[0]["ritmo"]}}</h3>
-    <div class="coreo-box row d-flex">
-        {% for info in coreos%}
-        <div class="card mt-2 mb-0 mr-2 ml-2">
-          <a href="coreografia/{{info["id"]}}" class="boton p-0 m-0"><img class="img-top" src="{{info["portada"]}}"></a>
-          <h5 class="card-title">{{info["titulo"]}}</h5>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-
-  </body>
-</html>
+                    </div>
+                </div>
+            </div>

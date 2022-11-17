@@ -39,7 +39,7 @@
                 </li>
                 <li>
                     <a href=<?php echo base_url() . "/mostrar_ganado"?>>
-                        <i class="nc-icon nc-favourite-28"></i>
+                        <i class="fa fa-cow"></i>
                         <p>Ganado</p>
                     </a>
                 </li>

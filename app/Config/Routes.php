@@ -46,11 +46,21 @@ $routes->get('/clave', 'NuevaClave::nuevaClave');
 $routes->post('/clave', 'NuevaClave::nuevaClave');
 $routes->get('/ganado', 'GestionarGanado::ganado');
 $routes->post('/ganado', 'GestionarGanado::ganado');
-$routes->get('/compra', 'NuevaCompra::compra');
 $routes->get('/tablero', 'Tablero::tablero');
+$routes->get('/proveedor', 'proveedor::proveedor');
+$routes->post('/proveedor', 'proveedor::proveedor');
 $routes->get('/mostrar_ganado', 'MostrarGanado::mostrar');
 $routes->get('/info_novillo/(:num)/edit', 'UpdateGanado::edit/$1', ['as' => 'admin_edit']);
 $routes->post('/info_novillo/(:num)/edit', 'UpdateGanado::edit/$1', ['as' => 'admin_edit']);
+$route['ganado/delete'] = 'DeleteGanado/delete';
+$routes->get('/compra/inicio', 'NuevaCompra::inicio');
+$routes->get('/compra/novillo', 'NuevaCompra::novillo');
+$routes->get('/compra/proveedor', 'NuevaCompra::proveedor');
+$routes->get('/compra/compra', 'NuevaCompra::compra');
+$routes->post('/compra/inicio', 'NuevaCompra::inicio');
+$routes->post('/compra/novillo', 'NuevaCompra::novillo');
+$routes->post('/compra/proveedor', 'NuevaCompra::proveedor');
+$routes->post('/compra/compra', 'NuevaCompra::compra');
 
 /*
  * --------------------------------------------------------------------

@@ -43,8 +43,8 @@ class GestionarGanado extends BaseController
             'peso' => $this->request->getPost('peso'),
             'comentario' => $this->request->getPost('comentario'),
             'codigo_chapa' => $this->request->getPost('codigo'),
+            'FK_id_tipoAdquisicion' => $this->request->getPost('adquicision'),
             'FK_id_finca' => '1',
-            'FK_id_tipoAdquisicion' => '1'
         ];
 
         if (($id = $db_model->create($registro)) > 0)

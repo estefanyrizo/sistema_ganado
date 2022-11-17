@@ -27,7 +27,7 @@ Ganado
                 <a class="btn btn-primary" href=<?php echo base_url() . "/info_novillo/" . $novillo["id_ganado"] . "/edit"; ?>><i class="nc-icon nc-refresh-69"></i></a>
               </div>
               <div class="col-6 form-group" align="center">
-                <a class="btn btn-danger" href=<?php echo base_url() . "/info_novillo/" . $novillo["id_ganado"]; ?>><i class="fa fa-trash"></i></a>
+                <a class="btn btn-danger" href=<?php echo base_url() . "/eliminar/" . $novillo["id_ganado"]; ?>><i class="fa fa-trash"></i></a>
               </div>
             </div>
           </div>
