@@ -1,7 +1,7 @@
 <?= $this->extend('Compra/plantilla') ?>
 
 <?= $this->section('title') ?>
-Tipo de compra
+Confirmar compra
 <?= $this->endSection('title') ?>
 <?= $this->section('formulario') ?>
 <?= form_open('compra/confirmar') ?>

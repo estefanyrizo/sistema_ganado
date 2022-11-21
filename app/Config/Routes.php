@@ -41,7 +41,8 @@ $routes->post('/login', 'Login::login');
 $routes->get('/registro', 'Registro::registro');
 $routes->post('/registro', 'Registro::registro');
 $routes->get('/salir', 'Salir::salir');
-$routes->get('/cuenta', 'Cuenta::Cuenta');
+$routes->get('/cuenta', 'Cuenta::edit');
+$routes->post('/cuenta/edit', 'Cuenta::edit');
 $routes->get('/clave', 'NuevaClave::nuevaClave');
 $routes->post('/clave', 'NuevaClave::nuevaClave');
 $routes->get('/ganado', 'GestionarGanado::ganado');
@@ -74,7 +75,7 @@ $routes->post('/venta/novillo', 'NuevaVenta::novillo');
 $routes->post('/venta/cliente', 'NuevaVenta::cliente');
 $routes->post('/venta/confirmar', 'NuevaVenta::venta');
 $routes->get('/mostrar_venta', 'MostrarVentas::mostrar');
-$routes->get('/venta_pdf', 'NuevaVenta::demoPDF');
+$routes->get('/venta_pdf/(:num)', 'NuevaVenta::demoPDF/$1', ['as' => 'pdf']);
 
 /*
  * --------------------------------------------------------------------

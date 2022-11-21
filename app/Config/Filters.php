@@ -77,7 +77,21 @@ class Filters extends BaseConfig
                 "/clave",
                 "/ganado",
                 "/compra",
-                "/tablero"
+                "/tablero",
+                "/proveedor",
+                "/cliente",
+                "/mostrar_ganado",
+                "/info_novillo/(:num)/edit",
+                "/compra/inicio",
+                "/compra/novillo",
+                "/compra/proveedor",
+                "/compra/confirmar",
+                "/venta/inicio",
+                "/venta/novillo",
+                "/venta/cliente",
+                "/venta/confirmar",
+                "/mostrar_venta",
+                "/venta_pdf/(:num)",
             ]
         ]
     ];

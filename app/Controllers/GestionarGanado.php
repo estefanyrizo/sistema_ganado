@@ -45,6 +45,7 @@ class GestionarGanado extends BaseController
             'codigo_chapa' => $this->request->getPost('codigo'),
             'FK_id_tipoAdquisicion' => $this->request->getPost('adquicision'),
             'FK_id_finca' => '1',
+            'vendido' => 'false',
         ];
 
         $ganado = $db_model->leerNovilloChapa($this->request->getPost('codigo'));

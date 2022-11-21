@@ -2,11 +2,10 @@
 
 namespace App\Controllers;
 use Dompdf\Dompdf;
-use App\Models\RazaModel;
 use App\Models\GanadoModel;
 use App\Models\ClienteModel;
 use App\Models\VentaModel;
-
+use App\Models\UPGanadoModel;
 class NuevaVenta extends BaseController
 {
     protected $helpers = ['form'];
@@ -76,7 +75,6 @@ class NuevaVenta extends BaseController
         $peso_ganado = $_COOKIE["peso_ganado"];
         setcookie("novillo",  $novillo, time() - 6000);
         setcookie("cliente",   $cliente, time() - 6000);
-
         $model_ganado = new GanadoModel();
         $model_cliente = new ClienteModel(); 
         $data_novillo = $model_ganado->leerNovillo($novillo);
@@ -109,16 +107,21 @@ class NuevaVenta extends BaseController
             "FK_id_ganado" => $novillo,
         ]; 
         $detalleVenta =  $Venta->createDetalleVenta($datos_detalleVenta);
+        $up_ganado = new UPGanadoModel();
+        $up_ganado->cambiarEstado($novillo);
         session()->setFlashdata('exito', "Venta ingresada correctamente");
-        return redirect()->to(base_url() . '/');
+        return redirect()->to(base_url() . '/venta_pdf/'. $detalleVenta);
     }
 
-    public function demoPDF()
+    public function demoPDF($id)
     {
+        $Venta = new VentaModel();
+        $datosVenta = $Venta->mostrarVenta($id);
         $dompdf = new Dompdf();
-        $dompdf->loadHTML(view("pdf"));
+        $dompdf->loadHTML(view("pdf",['venta' => $datosVenta]));
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
         $dompdf->stream();
+        return redirect()->to(base_url() . '/');
     }
 }

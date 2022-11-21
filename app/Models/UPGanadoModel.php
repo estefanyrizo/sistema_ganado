@@ -7,7 +7,12 @@ Class UPGanadoModel extends Model{
         $ganado->set($datos);
         $ganado->where('id_ganado', $id);
         $ganado->update();
-
+    }
+    public function cambiarEstado($id) {
+        $ganado = $this->db->table('Ganado');
+        $ganado->set('vendido', 'true');
+        $ganado->where('id_ganado', $id);
+        $ganado->update();
     }
 
 }

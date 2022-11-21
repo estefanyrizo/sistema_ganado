@@ -54,6 +54,7 @@ class NuevaCompra extends BaseController
             'codigo_chapa' => $this->request->getPost('codigo'),
             'FK_id_tipoAdquisicion' => $this->request->getPost('adquicision'),
             'FK_id_finca' => '1',
+            'vendido' => 'false',
         ];
         
         $ganado = $db_model->leerNovilloChapa($this->request->getPost('codigo'));
@@ -64,7 +65,6 @@ class NuevaCompra extends BaseController
         }
 
         if (($id = $db_model->create($registro)) > 0) {
-            session()->setFlashdata('exito', "Novillo ingresado correctamente");
             setcookie("novillo",  $id, time() + 6000, "/");
             return redirect()->to(base_url() . '/compra/proveedor');
         } else {
@@ -135,12 +135,4 @@ class NuevaCompra extends BaseController
         return redirect()->to(base_url() . '/');
     }
 
-    public function demoPDF()
-    {
-        $dompdf = new Dompdf();
-        $dompdf->loadHTML(view("pdf"));
-        $dompdf->setPaper('A4', 'portrait');
-        $dompdf->render();
-        $dompdf->stream();
-    }
 }

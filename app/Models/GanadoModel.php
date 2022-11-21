@@ -9,6 +9,7 @@ Class GanadoModel extends Model{
 		$ganado = $this->db->table('Ganado');
 		$ganado->select('*');
 		$ganado->join('Raza', 'Raza.id_raza = Ganado.FK_id_raza', 'inner');
+		$ganado->where('vendido', 'false');
 		return $ganado->get()->getResultArray();
 	}
 
