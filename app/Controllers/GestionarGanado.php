@@ -47,6 +47,13 @@ class GestionarGanado extends BaseController
             'FK_id_finca' => '1',
         ];
 
+        $ganado = $db_model->leerNovilloChapa($this->request->getPost('codigo'));
+
+        if (count($ganado) > 0) {
+            session()->setFlashdata('error', "El codigo de chapa ya pertenece a otro novillo");
+            return redirect()->to (base_url().'/ganado');
+        }
+
         if (($id = $db_model->create($registro)) > 0)
 		{
             session()->setFlashdata('exito', "Novillo ingresado correctamente");

@@ -21,6 +21,13 @@ Class GanadoModel extends Model{
 		return $ganado->get()->getResultArray();
 	}
 
+	public function leerNovilloChapa($codigo) 
+	{
+		$ganado = $this->db->table('Ganado');
+		$ganado->select('*');
+		$ganado->where('codigo_chapa', $codigo);
+		return $ganado->get()->getResultArray();
+	}
 
 	public function create ($datos)
 	{

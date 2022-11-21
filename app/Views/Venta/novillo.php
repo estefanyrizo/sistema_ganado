@@ -1,4 +1,4 @@
-<?= $this->extend('Compra/plantilla') ?>
+<?= $this->extend('Venta/plantilla') ?>
 
 <?= $this->section('title') ?>
 Novillo
@@ -6,7 +6,7 @@ Novillo
 <?= $this->section('formulario') ?>
 <div class="form-group">
     <div class="inputs">
-        <?= form_open('compra/novillo') ?>
+        <?= form_open('venta/novillo') ?>
         <div class="row m-3">
             <div class="col-4 mb-3">
                 <label for="codigo">Codigo de chapa</label>

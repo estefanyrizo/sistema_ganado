@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Controllers;
-
+use Dompdf\Dompdf;
 use App\Models\RazaModel;
 use App\Models\GanadoModel;
 use App\Models\ProveedorModel;
-use PhpParser\Node\Expr\New_;
+use App\Models\CompraModel;
 
 class NuevaCompra extends BaseController
 {
@@ -55,10 +55,17 @@ class NuevaCompra extends BaseController
             'FK_id_tipoAdquisicion' => $this->request->getPost('adquicision'),
             'FK_id_finca' => '1',
         ];
+        
+        $ganado = $db_model->leerNovilloChapa($this->request->getPost('codigo'));
+
+        if (count($ganado) > 0) {
+            session()->setFlashdata('error', "El codigo de chapa ya pertenece a otro novillo");
+            return redirect()->to (base_url().'/ganado');
+        }
 
         if (($id = $db_model->create($registro)) > 0) {
             session()->setFlashdata('exito', "Novillo ingresado correctamente");
-            setcookie("novillo",  $id, time() + 1000,"/compra/compra");
+            setcookie("novillo",  $id, time() + 6000, "/");
             return redirect()->to(base_url() . '/compra/proveedor');
         } else {
             return redirect()->to(base_url() . '/compra/novillo');
@@ -82,18 +89,21 @@ class NuevaCompra extends BaseController
             return redirect()->to(base_url() . '/compra/proveedor');
         }
 
-        setcookie("proveedor",   $this->request->getPost('proveedor'), time() + 1000,"/compra/compra");
-        return redirect()->to(base_url() . '/compra/compra');
+        setcookie("proveedor",   $this->request->getPost('proveedor'), time() + 6000,"/");
+        return redirect()->to(base_url() . '/compra/confirmar');
 
     }
     public function Compra()
     {
         $novillo = $_COOKIE["novillo"];
         $proveedor = $_COOKIE["proveedor"];
+        setcookie("novillo",  $novillo, time() - 6000);
+        setcookie("proveedor",   $proveedor, time() - 6000);
+
         $model_ganado = new GanadoModel();
         $model_proveedor = new ProveedorModel(); 
         $data_novillo = $model_ganado->leerNovillo($novillo);
-        $data_proveedor = $model_proveedor->obtenerProveedor($novillo);
+        $data_proveedor = $model_proveedor->obtenerProveedor($proveedor);
         $monto = $data_novillo[0]["precio"] * $data_novillo[0]["peso"];
         if (strtolower($this->request->getMethod()) !== 'post') {
             return view("Compra/compra", [
@@ -103,5 +113,34 @@ class NuevaCompra extends BaseController
                 ]
             );
         }
+        $totalNeto = $monto - $this->request->getPost('rebaja');
+        $datos_compra = [
+            "cantidad" => "1",
+            "total" => $totalNeto,
+            "fecha" => date('m-d-Y'),
+            "FK_id_tipoCompra" => "1",
+            "FK_id_proveedor" => $proveedor,
+            "FK_id_usuario" => $_SESSION['id_usuario'],
+            "rebaja"  => $this->request->getPost('rebaja'),
+        ];
+        $Compra = new CompraModel();
+        $compra = $Compra->createCompra($datos_compra);
+        $datos_detalleCompra = [
+            "monto" => $monto,
+            "FK_id_compra" => $compra,
+            "FK_id_ganado" => $novillo,
+        ]; 
+        $detalleCompra =  $Compra->createDetalleCompra($datos_detalleCompra);
+        session()->setFlashdata('exito', "Compra ingresada correctamente");
+        return redirect()->to(base_url() . '/');
+    }
+
+    public function demoPDF()
+    {
+        $dompdf = new Dompdf();
+        $dompdf->loadHTML(view("pdf"));
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+        $dompdf->stream();
     }
 }

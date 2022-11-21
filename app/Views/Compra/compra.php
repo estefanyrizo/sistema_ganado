@@ -4,7 +4,7 @@
 Tipo de compra
 <?= $this->endSection('title') ?>
 <?= $this->section('formulario') ?>
-<?= form_open('compra/fin') ?>
+<?= form_open('compra/confirmar') ?>
 <div class="row m-3">
     <?php
                                         foreach ($novillo as $novillo) : ?>
@@ -36,11 +36,11 @@ Tipo de compra
                                     <label for="proveedor">Proveedor</label>
                                     <input type="text" class="form-control" id="proveedor" name="proveedor" value="<?php echo $proveedor["nombre"];?>" readonly>
                                 </div>
-                                <?php endforeach; ?>
-                                <div class="col-6 mb-3">
-                                    <label for="fecha">Fecha</label>
-                                    <input type="date" class="form-control" id="fecha" name="fecha" value="fecha">
+                                <div class="col-3 mb-3">
+                                    <label for="rebaja">Rebaja</label>
+                                    <input type="text" class="form-control" id="rebaja" name="rebaja">
                                 </div>
+                                <?php endforeach; ?>
                                 <div class="col-12 mb-1">
                                     <input class="form-control mb-3" type="text" placeholder="Comentario" name="comentario">
                                 </div>

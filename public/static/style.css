@@ -263,7 +263,7 @@ p {
   color: #09c;
 }
 
-.mi-cuenta, .ganado {
+.mi-cuenta, .ganado, .bloque {
   padding-top: 6%;
   display: flex;
   justify-content: center;

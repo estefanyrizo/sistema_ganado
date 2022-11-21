@@ -20,13 +20,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./proovedor">
+                    <a href="./proveedor">
                         <i class="nc-icon nc-satisfied"></i>
                         <p>Proveedores</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./map.html">
+                    <a href="./cliente">
                         <i class="nc-icon nc-satisfied"></i>
                         <p>Clientes</p>
                     </a>
@@ -56,13 +56,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./upgrade.html">
+                    <a href="./mostrar_venta">
                         <i class="nc-icon nc-money-coins"></i>
                         <p>Ventas</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./upgrade.html">
+                    <a href="./mostrar_compra">
                         <i class="nc-icon nc-bag-16"></i>
                         <p>Compras</p>
                     </a>
@@ -115,11 +115,11 @@
                                 ?>
                                 <?php
                                 //El primer argumento es la invocacion al controlador
-                                echo anchor("", "Proveedores", ['class' => 'nav-item dropdown-item']);
+                                echo anchor("proveedor", "Proveedores", ['class' => 'nav-item dropdown-item']);
                                 ?>
                                 <?php
                                 //El primer argumento es la invocacion al controlador
-                                echo anchor("", "Clientes", ['class' => 'nav-item dropdown-item']);
+                                echo anchor("cliente", "Clientes", ['class' => 'nav-item dropdown-item']);
                                 ?>
                                 <?php
                                 //El primer argumento es la invocacion al controlador
@@ -131,11 +131,11 @@
                                 ?>
                                 <?php
                                 //El primer argumento es la invocacion al controlador
-                                echo anchor("", "Nueva venta", ['class' => 'nav-item dropdown-item']);
+                                echo anchor("venta/inicio", "Nueva venta", ['class' => 'nav-item dropdown-item']);
                                 ?>
                                 <?php
                                 //El primer argumento es la invocacion al controlador
-                                echo anchor("compra", "Nueva compra", ['class' => 'nav-item dropdown-item']);
+                                echo anchor("compra/inicio", "Nueva compra", ['class' => 'nav-item dropdown-item']);
                                 ?>
                             </div>
                         <li class="nav-item">
